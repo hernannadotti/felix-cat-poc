@@ -5,7 +5,7 @@
       <ul>
         @for (breed of breeds$ | async; track breed.id; let index = $index;) {
           <li>
-            <a href="#" class="link" (click)="clickBreed($event)">
+            <a href="#"  class="link" (click)="clickBreed($event, breed)">
               <span>{{breed.name}}</span>
             </a>
           </li>

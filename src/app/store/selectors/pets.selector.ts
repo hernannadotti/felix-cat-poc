@@ -8,9 +8,15 @@ export interface IBreed {
 }
 
 
-export const selectAllBreeds = (state: AppState) => state.breeds;
+export const selectAllBreeds = (state: AppState) => state.store.breeds;
+export const selectedBreed = (state: AppState) => state.store.selectedBreed;
 
 export const selectBreeds = createSelector(
   selectAllBreeds,
-  (state: PetsState) => state.breeds
+  (state: PetsState) => state
+);
+
+export const selectedCurrentBreed = createSelector(
+  selectedBreed,
+  (state: PetsState) => state
 );

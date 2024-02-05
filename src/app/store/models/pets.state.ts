@@ -1,3 +1,6 @@
 export interface PetsState {
-  breeds: any[];
+  store: {
+    breeds: any[];
+    selectedBreed: any;
+  }
 }

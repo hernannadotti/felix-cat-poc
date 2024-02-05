@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>Pet Details</h1>
+      @if(selectedBreed$ | async; as pet)  {
+        <div class="card mb-2">
+          <div class="card-body">
+            <p><b>Name:</b>&nbsp; <span>{{pet.name}}</span></p>
+            <p><b>Description:</b>&nbsp; <span>{{pet.description}}</span></p>
+            <p><b>Origin:</b>&nbsp; <span>{{pet.origin}}</span></p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

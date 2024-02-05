@@ -1,19 +1,17 @@
 import { isDevMode } from '@angular/core';
 import {
-  ActionReducer,
   ActionReducerMap,
-  createFeatureSelector,
-  createSelector,
   MetaReducer
 } from '@ngrx/store';
 import { petsReducer } from './pets.reducer';
 
 export interface State {
-  breeds: any[];
+  store: any;
+
 }
 
 export const reducers: ActionReducerMap<State> = {
-  breeds: petsReducer
+  store: petsReducer
 };
 
 

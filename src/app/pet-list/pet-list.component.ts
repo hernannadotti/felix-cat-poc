@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { getPetList } from '../store/actions';
+import { getPetList, selectBreed } from '../store/actions';
 import { Store } from '@ngrx/store';
 import { selectBreeds } from '../store/selectors/pets.selector';
 import { Observable, Subscription } from 'rxjs';
 import { AppState } from '../store/app.state';
 import { AsyncPipe } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pet-list',
@@ -19,9 +20,10 @@ export class PetListComponent implements OnInit {
   subscriptions: Subscription[] = [];
 
   constructor(
-    private store: Store<AppState>
+    private store: Store<AppState>,
+    private router:Router
   ) {}
-  
+
   ngOnInit() {
     this.breeds$ = this.store.select(selectBreeds);
     this.store.dispatch(getPetList());
@@ -31,8 +33,9 @@ export class PetListComponent implements OnInit {
     this.subscriptions.forEach(sub => sub.unsubscribe());
   }
 
-
-  clickBreed(event: Event) {
+  clickBreed(event: Event, selectedBreed: any) {
     event.preventDefault();
+    this.store.dispatch(selectBreed( {payload: {selectedBreed} }));
+    this.router.navigate(['pets', selectedBreed?.id]);
   }
 }

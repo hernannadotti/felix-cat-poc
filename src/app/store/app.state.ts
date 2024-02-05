@@ -1,3 +1,6 @@
 export interface AppState {
-  breeds: any;
+  store: {
+    breeds: any;
+    selectedBreed: any;
+  }
 }

@@ -11,7 +11,8 @@ export class PetsEffects {
     private actions$: Actions,
     private petsService: PetsService
   ) {}
-  public loadUnitList$ = createEffect(() => {
+
+  public loadBreedsList$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(getPetList),
       mergeMap(() => {
@@ -22,4 +23,5 @@ export class PetsEffects {
       })
     );
   });
+
 }
