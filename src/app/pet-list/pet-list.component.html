@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <h3>- Breeds List -</h3>
+      <h3>Breeds List</h3>
       <ul>
         @for (breed of breeds$ | async; track breed.id; let index = $index;) {
           <li>
