@@ -6,6 +6,7 @@ import { currentImagePet, selectedCurrentBreed } from '../store/selectors/pets.s
 import { AsyncPipe } from '@angular/common';
 import { Router } from '@angular/router';
 import { clearSelectedBreed, clearSelectedImage, getPetImage } from '../store/actions';
+import { IBreed } from '../models/breed';
 
 @Component({
   selector: 'app-pet-details',
@@ -37,7 +38,7 @@ export class PetDetailsComponent {
   }
 
   checkNavigation() {
-    this.selectedBreed$.pipe(switchMap((breed: any) => {
+    this.selectedBreed$.pipe(switchMap((breed: IBreed) => {
       let imageReference = breed?.reference_image_id;
       if(imageReference) {
         this.store.dispatch(getPetImage({payload: { imageReference}}));

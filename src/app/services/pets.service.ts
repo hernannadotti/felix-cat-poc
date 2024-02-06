@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IBreed } from '../models/breed';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +12,11 @@ export class PetsService {
     private http: HttpClient
   ) { }
 
-  getPetsList() {
-    return this.http.get('https://api.thecatapi.com/v1/breeds');
+  getPetsList(): Observable<IBreed[]> {
+    return this.http.get('https://api.thecatapi.com/v1/breeds') as Observable<IBreed[]>;
   }
 
-  getPetImage(imageReference: string) {
-    return this.http.get(`https://api.thecatapi.com/v1/images/${imageReference}`);
+  getPetImage(imageReference: string): Observable<IBreed> {
+    return this.http.get(`https://api.thecatapi.com/v1/images/${imageReference}`) as Observable<IBreed>;
   }
 }

@@ -12,7 +12,7 @@ import { provideStoreDevtools } from '@ngrx/store-devtools';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideRouter(routes), 
+    provideRouter(routes),
     provideClientHydration(),
     provideHttpClient(withFetch()),
     provideStore(reducers, { metaReducers }),
