@@ -13,4 +13,8 @@ export class PetsService {
   getPetsList() {
     return this.http.get('https://api.thecatapi.com/v1/breeds');
   }
+
+  getPetImage(imageReference: string) {
+    return this.http.get(`https://api.thecatapi.com/v1/images/${imageReference}`);
+  }
 }

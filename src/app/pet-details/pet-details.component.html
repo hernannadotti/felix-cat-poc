@@ -5,6 +5,9 @@
       @if(selectedBreed$ | async; as pet)  {
         <div class="card mb-2">
           <div class="card-body">
+            @if(currentImagePet$ | async; as imagePet) {
+              <img [attr.src]="imagePet?.url" class="img-fluid" alt="">
+            }
             <p><b>Name:</b>&nbsp; <span>{{pet.name}}</span></p>
             <p><b>Description:</b>&nbsp; <span>{{pet.description}}</span></p>
             <p><b>Origin:</b>&nbsp; <span>{{pet.origin}}</span></p>
