@@ -1,19 +1,16 @@
 <div class="container">
-  <div class="row">
-    <div class="col">
-      <h1>Pet Details</h1>
-      @if(selectedBreed$ | async; as pet)  {
-        <div class="card mb-2">
-          <div class="card-body">
-            @if(currentImagePet$ | async; as imagePet) {
-              <img [attr.src]="imagePet?.url" class="img-fluid" alt="">
-            }
-            <p><b>Name:</b>&nbsp; <span>{{pet.name}}</span></p>
-            <p><b>Description:</b>&nbsp; <span>{{pet.description}}</span></p>
-            <p><b>Origin:</b>&nbsp; <span>{{pet.origin}}</span></p>
-          </div>
-        </div>
-      }
-    </div>
+  <div class="avatar-flip">
+    @if(currentImagePet$ | async; as imagePet) {
+      <img [attr.src]="imagePet?.url" height="300" class="img-responsive" width="300">
+      <img [attr.src]="imagePet?.url" class="sepia img-responsive" height="300" width="300">
+    }
   </div>
+  @if(selectedBreed$ | async; as pet)  {
+    <h2>{{pet.name}}</h2>
+    <h4>HOVER OVER CONTAINER</h4>
+    <h5>Description</h5>
+    <p>{{pet.description}}</p>
+    <h6>Origin</h6>
+    <p>{{pet.origin}}</p>
+  }
 </div>
