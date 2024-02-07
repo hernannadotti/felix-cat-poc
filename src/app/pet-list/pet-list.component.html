@@ -5,7 +5,7 @@
       <div class="row mt-3">
         <div class="grid">
           @for (breed of breeds$ | async; track breed.id; let index = $index;) {
-            <a href="#"  class="link" (click)="clickBreed($event, breed)">
+            <a href="#"  class="link link-underline link-underline-opacity-0" (click)="clickBreed($event, breed)">
               <span>{{breed.name}}</span>
             </a>
           }

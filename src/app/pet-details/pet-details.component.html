@@ -1,8 +1,8 @@
 <div class="container">
   <div class="avatar-flip">
     @if(currentImagePet$ | async; as imagePet) {
-      <img [attr.src]="imagePet?.url" height="300" class="img-responsive" width="300">
-      <img [attr.src]="imagePet?.url" class="sepia img-responsive" height="300" width="300">
+      <img [attr.src]="imagePet?.url" height="250" class="img-responsive" width="250">
+      <img [attr.src]="imagePet?.url" class="sepia img-responsive" height="250" width="250">
     }
   </div>
   @if(selectedBreed$ | async; as pet)  {
