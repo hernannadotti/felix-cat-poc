@@ -19,4 +19,8 @@ export class PetsService {
   getPetImage(imageReference: string): Observable<IBreed> {
     return this.http.get(`https://api.thecatapi.com/v1/images/${imageReference}`) as Observable<IBreed>;
   }
+
+  getBreedById(id: string): Observable<IBreed> {
+    return this.http.get(`https://api.thecatapi.com/v1/breeds/${id}`) as Observable<IBreed>;
+  }
 }
