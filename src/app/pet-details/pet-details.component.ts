@@ -80,6 +80,7 @@ export class PetDetailsComponent {
         this.store.dispatch(getPetImage({payload: { imageReference }}));
         return EMPTY;
       }
+      this.goBack();
       return EMPTY;
     }))
     .subscribe(imgReference => {

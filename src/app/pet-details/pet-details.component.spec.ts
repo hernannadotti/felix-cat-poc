@@ -4,7 +4,7 @@ import { PetDetailsComponent } from './pet-details.component';
 import { provideHttpClient } from '@angular/common/http';
 import { provideStore } from '@ngrx/store';
 import { metaReducers, reducers } from '../store/reducers';
-import { ActivatedRoute, provideRouter } from '@angular/router';
+import { provideRouter } from '@angular/router';
 import { routes } from '../app.routes';
 
 describe('PetDetailsComponent', () => {
